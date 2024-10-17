@@ -7,7 +7,7 @@
     @vite(['resources/js/app.js'])
 </head>
 <body>
-    <div>
+    <div class="container mt-5 col-md-6">
     <h1>Universidad Politécnica de Querétaro</h1>
     <p>
     Repaso 1<br>    
@@ -17,7 +17,7 @@
     S193<br>
     17/10/24<br>
     </p>
-    <a href="" class="btn btn-primary">REPASO 1</a>
+    <a href="{{ route ('rutarepaso')}}" class="btn btn-primary">REPASO 1</a>
 </div>
 </body>
 </html>
