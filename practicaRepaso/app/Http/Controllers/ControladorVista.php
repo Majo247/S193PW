@@ -16,27 +16,27 @@ class ControladorVista extends Controller
         return view('repaso1');
     }
     
-    public function convertidor(Request $request)
+    public function convertirMBaGB(Request $peticion)
     {
-        $valor = $request->input('valor'); 
+        $valor = $peticion->input('valor'); 
         $resultado = $valor * 0.001;
         return (string)$resultado;
     }
-    public function convertirGBaMB(Request $request)
+    public function convertirGBaMB(Request $peticion)
     {
-        $valor = $request->input('valor'); 
+        $valor = $peticion->input('valor'); 
         $resultado = $valor * 1000;
         return (string)$resultado;
     }
-    public function convertirGBaTB(Request $request)
+    public function convertirGBaTB(Request $peticion)
     {
-        $valor = $request->input('valor'); 
+        $valor = $peticion->input('valor'); 
         $resultado = $valor * 0.001;
         return (string)$resultado;
     }
-    public function convertirTBaGB(Request $request)
+    public function convertirTBaGB(Request $peticion)
     {
-        $valor = $request->input('valor'); 
+        $valor = $peticion->input('valor'); 
         $resultado = $valor * 1000;
         return (string)$resultado;
     }
