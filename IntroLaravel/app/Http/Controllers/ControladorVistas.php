@@ -32,15 +32,24 @@ class ControladorVistas extends Controller
 
 
     // redireccion a la origen de la petción
-    // return back();
+    //return back();
 
 
 
-    //redireccion con cariable adjunta
+    //redireccion con variable adjunta
     // $id= [['usuario'=>1],['usuario'=>2]];
 
-    // return view('formulario' ,compact('id'));
+    //return view('formulario' ,compact('id'));
 
+
+    //se guarda en una variable para darle un valor a la peticion validate que comprueba las condiciones 
+    //comprueba que exista el required 
+    $validacion= $peticion->validate([
+        'txtnombre'=> 'required|min:4 |max:20 ',
+        'txtapellido'=> 'required',
+        'txtcorreo'=> 'required',
+        'txttelefono'=> 'required|numeric'
+      ]);
 
     //redireccion con un mensaje flash en session 
     $usuario= $peticion->input('txtnombre');
