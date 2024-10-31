@@ -5,8 +5,19 @@
     <div class="card-header fs-5 text-center text-primary">
         Registro de Libros
     </div>
+
+    @if(session('exito'))
+        <script> 
+            Swal.fire({
+                title: "Respuesta del servidor!",
+                text: "{{ session('exito') }}",
+                icon: "success"
+            });
+        </script>
+    @endif
+
     <div class="card-body text-justify">
-        <form action="/enviarLibro" method="POST">
+        <form action="{{ route('rutaLibro') }}" method="POST">
             @csrf
 
             <div class="mb-3">
@@ -42,7 +53,7 @@
                 <input type="text" class="form-control" name="txtemail" value="{{old('txtemail')}}">
             </div>
 
-            <button type="submit" class="btn btn-success btn-sm">{{__('Guardar Libro')}}</button>
+            <button type="submit" class="btn btn-success btn-sm">Guardar Libro</button>
         </form>
 
     </div>
