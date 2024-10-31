@@ -45,5 +45,18 @@
     "Unauthorized": "Unauthorized",
     "Verify Email Address": "Verify Email Address",
     "Whoops!": "Whoops!",
-    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account."
+    "You are receiving this email because we received a password reset request for your account.": "You are receiving this email because we received a password reset request for your account.",
+    "Registro de Libro": "Register book",
+    "Titulo": "Title",
+    "Autor": "Author",
+    "Paginas": "Pages",
+    "Año": "Year",
+    "Editorial": "Editorial",
+    "Email Editorial": "Editorial Email",
+    "2° Practica": "2° Practice",
+    "Principal": "Main",
+    "Registro de libros": "Book Registration",
+    "Guardar libro": "Save Book"
+
+   
 }
