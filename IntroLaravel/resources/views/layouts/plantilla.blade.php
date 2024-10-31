@@ -23,10 +23,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}" aria-current="page" href="{{ route('rutaform')}}">Registro Clientes</a>
+                        <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}" aria-current="page" href="{{ route('rutaform')}}">{{__('Registro clientes')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}s" href="{{ route('rutaclientes')}}">Consulta Clientes</a>
+                        <a class="nav-link {{ request()->routeIs('rutaform')?'text-warning':'' }}s" href="{{ route('rutaclientes')}}">{{__('Consulta clientes')}}</a>
                     </li>
                 </ul>
             </div>

@@ -18,11 +18,11 @@
 </head>
 <body>
     <div class="d-flex flex-column justify-content-center align-items-center text-center full-height">
-        <h1 class="display-1">Bienvenido Turista!</h1>
-        <p>Presiona el botón para iniciar....</p>
+        <h1 class="display-1">{{__('Welcome Tourist')}}</h1>
+        <p>{{__('Press the button to start....')}}</p>
 
-      <a href="/form" class="btn btn-danger"> Ir al Registro </a>
-      <a href="{{ route('rutaform')}}" class="btn btn-primary">Ir al Registro</a> 
+      <a href="/form" class="btn btn-danger">{{__('Go to registration')}}</a>
+      <a href="{{ route('rutaform')}}" class="btn btn-primary">{{__('Go to registration')}}</a> 
     </div>
 </body>
 </html>
