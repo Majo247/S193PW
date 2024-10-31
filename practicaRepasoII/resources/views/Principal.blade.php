@@ -6,6 +6,7 @@
     <div class="row align-items-center">
         <div class="col-md-8">
             <h1 class="text-start"> De internet a las estanterías: cómo Wattpad ha revolucionado la literatura juvenil</h1>
+            <br>
             <p>El falso mito de que los jóvenes no leen por culpa de la tecnología lleva años desmontándose. Aun rodeados de pantallas y habituados a la inmediatez de los estímulos audiovisuales o de TikTok, en sus vidas sigue habiendo espacio para los libros. Un vistazo al panorama literario actual es más que suficiente para darse cuenta de que los argumentos catastrofistas han empañado una realidad bien distinta. Ha cambiado el qué, quizás el cómo, pero el cuánto leen los adolescentes demuestra una tendencia al alza: todavía son capaces de devorar una historia de principio a fin sin acelerar su desarrollo como un audio de WhatsApp.</p>
             <p>Un vistazo al panorama literario actual es más que suficiente para darse cuenta de que estos argumentos catastrofistas han empañado una realidad bien distinta. Ha cambiado el qué, quizás el cómo, pero el cuánto leen los adolescentes y preadolescentes demuestra una tendencia al alza. Todavía son más que capaces de devorar una historia de principio a fin sin acelerar su desarrollo como si fuera un audio de WhatsApp.</p>
              <p>Los índices de lectura en nuestro país han aumentado en casi seis puntos en el transcurso de la última década, con especial incidencia entre los más jóvenes, según el último Barómetro de Hábitos de Lectura y Compra de Libros en España. Aquellos con edades entre 10 y 18 años registran, además, los mayores porcentajes de lectores frecuentes (los que leen al menos un día a la semana), con un incremento de 12 puntos respecto a 2012.</p>
@@ -21,4 +22,5 @@
          </div>
          </div>
 </footer>
+
 @endsection
