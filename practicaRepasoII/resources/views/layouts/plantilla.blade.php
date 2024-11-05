@@ -9,7 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <!-- Navbar -->
+   
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">{{__('2° Practice ')}}</a>
@@ -29,7 +29,7 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    
     @yield('contenido')
 </body>
 </html>

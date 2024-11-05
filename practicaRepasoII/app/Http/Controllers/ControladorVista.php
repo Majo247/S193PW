@@ -32,6 +32,9 @@ class ControladorVista extends Controller
 
 
 
+
+        
+
         $titulo = $peticion->input('txttitulo');
         session()->flash('exito', 'Se guardó el Libro: ' . $titulo);
         return to_route('rutaRegistro');
