@@ -1,52 +1,45 @@
-@extends('layout.navformularios')
+@extends('layout.navplantilla')
+
 @section('contenido')
 
-@session('EXITO')
-<div 
-    class="alert alert-primary"
-    role="alert"
-    >
-    <strong>Registro exitoso</strong> {{$value}}
-</div>
-@endsession
 
+@if(session('EXITO'))
+    <div class="alert alert-primary" role="alert">
+        <strong>Registro exitoso:</strong> {{ session('EXITO') }}
+    </div>
+@endif
 
-<h1 class="text-center mb-4">Registro fde clientes</h1> 
-
+<h1 class="text-center mb-4">Registro de clientes</h1>
 
 <div class="card-body">
-      <form id="loginForm">
+    <form action="{{ route('guardarPrenda') }}" method="POST">
+        @csrf
         <div class="mb-3">
-          <label for="username" class="form-label">Prenda</label>
-          <input type="text" class="form-control" id="prenda" placeholder="Ingresa la prenda" required>
-          <small>{{ $errors->first('txtPrenda') }}</small>
+            <label for="prenda" class="form-label">Prenda</label>
+            <input type="text" name="Nombre" class="form-control" id="prenda" placeholder="Ingresa la prenda" required>
+            <small class="text-danger">{{ $errors->first('Nombre') }}</small>
         </div>
 
         <div class="mb-3">
-          <label for="username" class="form-label">Color</label>
-          <input type="text" class="form-control" id="color" placeholder="Ingresa el color" required>
-          <small>{{ $errors->first('txtColor') }}</small>
+            <label for="color" class="form-label">Color</label>
+            <input type="text" name="Color" class="form-control" id="color" placeholder="Ingresa el color" required>
+            <small class="text-danger">{{ $errors->first('Color') }}</small>
         </div>
 
         <div class="col-md-4">
-        <label for="ninos" class="form-label">cantida</label>
-        <select class="form-select" id="ninos">
-          <option selected>Selecciono</option>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <small>{{ $errors->first('txtcantidsad') }}</small>
-        </select>
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <select class="form-select" name="Cantidad" id="cantidad">
+                <option selected>Selecciona</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            <small class="text-danger">{{ $errors->first('Cantidad') }}</small>
+        </div>
 
-        <button type="submit" class="btn btn-primary w-100">Guardar Prendas</button>
-      </div>
-
-
-
-
-
-
+        <button type="submit" class="btn btn-primary w-100 mt-3">Guardar Prenda</button>
+    </form>
+</div>
 
 @endsection
