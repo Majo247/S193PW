@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\validadorCliente;
 
-
 /* usamos este controlador para administrar la logica de las vistas */
 class ControladorVistas extends Controller
 {
@@ -14,7 +13,10 @@ class ControladorVistas extends Controller
         return view('inicio');
     }
 
-  
+    public function formulario()
+    {
+        return view('formulario');
+    }
 
     public function consulta()
     {
