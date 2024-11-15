@@ -4,16 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; 
-use sCarbon\Carbon;
+use Carbon\Carbon;
+use App\Http\Requests\validadorCliente;
+
 
 class clienteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Aqui se va la consulta de todo del CRUD
      */
     public function index()
     {
-        //
+        $consultaclientes= DB::table('clientes')->get();
+        return view('clientes',compact('consultaclientes'));
     }
 
     /**
@@ -27,18 +30,21 @@ class clienteController extends Controller
     /**
      * A qui va el insert 
      */
-    public function store(Request $request)
+    public function store(validadorCliente $request)
     {
         DB::table('clientes')->insert([
-            "nombre" => $request->input('nombre'),
-            "apellido" => $request->input('apellido'),
-            "telefono" => $request->input('telefono'),
-            "direccion" => $request->input('direccion'),
+            "nombre" => $request->input('txtnombre'),
+            "apellido" => $request->input('txtapellido'),
+            "telefono" => $request->input('txttelefono'),
+            "correo" => $request->input('txtcorreo'),
             "created_at" => Carbon::now(),
-            "update_at" => Carbon::now(),
+            "updated_at" => Carbon::now(),
         ]);
+        $usuario= $request->input('txtnombre');
+        session()->flash('exito','Se guardo el usuario: ' .$usuario);
+        return to_route('rutaform');
 
-        return redirect()->route('clientes.index')->with('mensaje', 'Cliente agregado correctamente');
+        
     }
 
     /**

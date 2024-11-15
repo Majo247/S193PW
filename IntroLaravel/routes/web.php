@@ -26,10 +26,14 @@ Route::view('/component', 'componentes')->name('rutaComponent');
 
 Route::get('/', [ControladorVistas::class, 'home'])->name('rutainicio');
 
-Route::get('/consultar', [ControladorVistas::class, 'consulta'])->name('rutaclientes');
+// Route::get('/consultar', [ControladorVistas::class, 'consulta'])->name('rutaclientes');
 
-Route::post('/enviarCliente', [ControladorVistas::class, 'procesarCliente'])->name('rutaEnviar');
+
 
 //Rutas para cliente controlador
 
 Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaform');
+
+Route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar');
+
+Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');
