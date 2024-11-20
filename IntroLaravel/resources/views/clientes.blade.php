@@ -5,9 +5,7 @@
     <div class="container mt-5 col-md-8">
         @foreach ($consultaclientes as $cliente)
 
-      
-
-
+    
 
         <div class="card text-justify font-monospace mt-4">
 
@@ -18,7 +16,7 @@
                 <p class="card-text fw-lighter"></p>
             </div>
             <div class="card-footer text-muted">
-                <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
+            <a href="{{ route('rutaActualizar')}}" class="btn btn-warning btn-sm">{{__('Actualizar')}}</a> 
                 <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
             </div>
         </div>
@@ -27,3 +25,4 @@
     </div>
     {{-- Finaliza tarjetaCliente --}} 
     @endsection
+    

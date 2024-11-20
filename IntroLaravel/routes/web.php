@@ -37,3 +37,10 @@ Route::get('/cliente/create', [clienteController::class, 'create'])->name('rutaf
 Route::post('/cliente', [clienteController::class, 'store'])->name('rutaEnviar');
 
 Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes');
+
+//Nueva ruta para actualiar 
+
+Route::get('/actualizar', [clienteController::class, 'edit'])->name('rutaActualizar');
+
+
+
