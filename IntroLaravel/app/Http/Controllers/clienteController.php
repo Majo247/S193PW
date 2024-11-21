@@ -58,10 +58,10 @@ class clienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(validadorCliente $request, string $id)
+    public function edit(string $id)
     { 
-        $cliente= DB::table('clientes')->where('id', '=', $id)->first();
-        return view('actualizar');
+        $cliente= DB::select('select * from clientes where id ='.$id.'');
+        return view('actualizar', compact('cliente'));
     }
 
     /**
@@ -77,8 +77,8 @@ class clienteController extends Controller
             "updated_at" => Carbon::now(),
         ]);
         $usuario= $request->input('txtnombre');
-        session()->flash('exito','Se actualizo el usuario: ' .$usuario);
-        return to_route('rutaclientes');
+        session()->flash('Exito','Se actualizo el usuario: ' .$usuario);
+        return redirect()->route('rutaclientes');
     }
 
     /**
@@ -86,6 +86,10 @@ class clienteController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $registro = DB::select('select nombre from clientes where id = ' .$id.'');
+        $nombre = $registro[0]->nombre;
+        DB::table('clientes')->where('id', $id)->delete();
+        session()->flash('Exito','El cliente se elimino correctamente: '.$nombre);
+        return redirect()->route('rutaclientes');
     }
 }

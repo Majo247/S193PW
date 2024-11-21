@@ -40,7 +40,11 @@ Route::get('/cliente', [clienteController::class, 'index'])->name('rutaclientes'
 
 //Nueva ruta para actualiar 
 
-Route::get('/actualizar', [clienteController::class, 'edit'])->name('rutaActualizar');
+Route::get('/cliente/{id}/edit', [clienteController::class, 'edit'])->name('rutaActualizar');
+
+Route::put('/cliente/{id}', [clienteController::class, 'update'])->name('rutaEditar');
+
+Route::delete('/cliente/{id}', [clienteController::class, 'destroy'])->name('rutaBorrar');
 
 
 
