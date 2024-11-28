@@ -1,6 +1,20 @@
 @extends('layouts.plantilla')
 @section('conection')
 
+
+
+@session('exito')
+    <script>
+        Swal.fire({
+        title: "Respuesta del Servidor!",
+        text: '{{$value}}',
+        icon: "success"
+        });
+    </script>
+@endsession
+
+
+
     {{-- Inicia tarjetaCliente --}}
     <div class="container mt-5 col-md-8">
 
@@ -16,8 +30,12 @@
                 <p class="card-text fw-lighter"></p>
             </div>
             <div class="card-footer text-muted">
-                <button type="submit" class="btn btn-warning btn-sm">Actualizar</button>
-                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+            <a href="{{ route('cliente.edit', [$cliente->id]) }}" class="btn btn-warning btn-sm">{{ __('Actualizar') }}</a>
+            <form action="{{ route('cliente.destroy', [$cliente->id]) }}" method="POST" style="display:inline;" onsubmit="return confirmarEliminacion()">
+                    @csrf
+                    @method("DELETE")
+                    <button type="submit" class="btn btn-danger btn-sm">{{ __('Eliminar') }}</button>
+                </form>
             </div>
         </div>
 
@@ -25,7 +43,13 @@
         
         {{-- Finaliza tarjetaCliente --}} 
     
-      
+        <script> 
+        function confirmarEliminacion() {
+            return confirm('¿Está seguro de eliminar el cliente?');
+        }
+    </script>
+    
+     @endforeach
     </div>
-    @endforeach
+
     @endsection

@@ -60,24 +60,38 @@ class ClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(cliente $cliente)
+    public function edit(string $id)
     {
-        //
+        $cliente = cliente::find($id);
+        return view('Actualizar', ['cliente' => $cliente]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, cliente $cliente)
+    public function update(ValidadorCliente $request, string $id)
     {
-        //
+        $addCliente= cliente::find($id);
+        $addCliente->nombre=$request->input('txtnombre');
+        $addCliente->apellido=$request->input('txtapellido');
+        $addCliente->correo=$request->input('txtcorreo');
+        $addCliente->telefono=$request->input('txttelefono');
+        $addCliente->save();
+
+        $msj= $request->input ('txtnombre');
+        session()->flash('exito','Se actualizo el cliente: '.$msj);
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cliente $cliente)
+    public function destroy(string $id)
     {
-        //
+        $cliente = cliente::find($id);
+        $msj = $cliente->nombre;
+        $cliente->delete();
+        session()->flash('exito','Se elimino el cliente: '.$msj);
+        return redirect()->back();
     }
 }
