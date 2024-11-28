@@ -38,7 +38,7 @@
                 <form action="{{route('rutaEnviar')}}" method="POST">
                     @csrf
 
-                    <div class="mb-3">
+                    <div class="mb-3">z
                         <label for="nombre" class="form-label">{{__('Nombre')}}</label>
                         <input type="text" class="form-control" name="txtnombre" value=" {{old('txtnombre')}} ">
                         <small class="text-danger fst-italic">{{ $errors->first('txtnombre') }}</small>

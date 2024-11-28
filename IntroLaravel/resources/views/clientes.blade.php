@@ -29,7 +29,6 @@
 
             <a href="{{ route('rutaActualizar', [$cliente->id]) }}" class="btn btn-warning btn-sm">{{ __('Actualizar') }}</a>
 
-
                 <form action="{{ route('rutaBorrar', [$cliente->id]) }}" method="POST" style="display:inline;" onsubmit="return confirmarEliminacion()">
                     @csrf
                     @method('DELETE')

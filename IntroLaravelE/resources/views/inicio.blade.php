@@ -22,7 +22,7 @@
         <p>{{__('Press the button to start....')}}</p>
 
       <a href="/form" class="btn btn-danger">{{__('Go to registration')}}</a>
-      <a href="{{ route('rutaform')}}" class="btn btn-primary">{{__('Go to registration')}}</a> 
+      <a href="{{ route('cliente.create')}}" class="btn btn-primary">{{__('Go to registration')}}</a> 
     </div>
 </body>
 </html>
