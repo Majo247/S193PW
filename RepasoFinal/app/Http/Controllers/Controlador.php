@@ -20,7 +20,7 @@ class Controlador extends Controller
 
       ]);
 
-   
+   //para sweetAlert
     $Prenda= $peticion->input('txtPrenda');
     $Color= $peticion->input('txtColor');
     session()->flash('exito','Se guardo la prenda: ' .$Prenda.$Color);
